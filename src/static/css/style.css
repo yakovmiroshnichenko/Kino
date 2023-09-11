@@ -1,0 +1,37 @@
+body {
+    font-size:17px; /* Установите желаемый размер шрифта, например, 16 пикселей */
+}
+.content-wrapper {
+  min-height: calc(100vh - 60px); /* Установите желаемую высоту, оставив место для footer */
+  padding-bottom: 60px; /* Высота вашего footer */
+  position: relative;
+}
+.main-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+/* CSS style */
+.brand-link {
+  position: fixed;
+  z-index: 1;
+}
+
+.sidebar {
+  position: fixed; /* Добавьте эту строку */
+  margin-top: 10px;
+  top: 0; /* Добавьте эту строку */
+  z-index: 1;
+}
+/* Увеличение вертикальных отступов между элементами меню */
+.nav-item {
+  margin-bottom: 100px; /* Измените значение по вашему усмотрению */
+}
+
+/* Увеличение горизонтальных отступов между текстом и иконками */
+.nav-link {
+  padding-left: 20px; /* Измените значение по вашему усмотрению */
+}
+
+
+
