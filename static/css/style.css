@@ -16,7 +16,6 @@ body {
   position: fixed;
   z-index: 1;
 }
-
 .sidebar {
   position: fixed; /* Добавьте эту строку */
   margin-top: 10px;
@@ -27,11 +26,16 @@ body {
 .nav-item {
   margin-bottom: 100px; /* Измените значение по вашему усмотрению */
 }
-
 /* Увеличение горизонтальных отступов между текстом и иконками */
 .nav-link {
   padding-left: 20px; /* Измените значение по вашему усмотрению */
 }
+/* Примените стиль к полю ввода */
+.vertical-input {
+  height: auto; /* Установите желаемую высоту */
+  word-wrap: break-word;
+}
+
 
 
 
