@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'src.gallery_seo.apps.GallerySeoConfig',
     'src.pages.apps.PagesConfig',
     'src.users.apps.UsersConfig',
+    'src.core.apps.CoreConfig'
 ]
 
 MIDDLEWARE = [

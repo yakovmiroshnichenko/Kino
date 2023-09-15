@@ -16,12 +16,14 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from src.core.views import basic
 from config import settings
-from src.pages.views import index
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', index)
+    path('adminLTE/', basic),
+    path('film/', include('src.core.urls')),
 ]
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
