@@ -2,34 +2,41 @@
 {% load static %}
 {% load i18n %}
 {% block content %}
-        <div class="form-group row">
+    <form action="{% url 'film' %}" method="post" enctype="multipart/form-data" id="film-form">
+        {% csrf_token %}
+         <div class="form-group row">
               <label for="textInput" class="col-sm-2 col-form-label text-center">Название фильма</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="textInput" placeholder="Название фильма">
+                   {{ form.name }}
                 </div>
         </div>
-        <div class="form-group row">
+         <div class="form-group row">
               <label for="textInput" class="col-sm-2 col-form-label text-center">Описание</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control vertical-input" id="textInput" placeholder="Текст">
+                    {{ form.description }}
                 </div>
+        </div>
+{#        {{ form.main_image }}#}
+        <div class="form-group row fileInput-box">
+        <label for="textInput" class="col-sm-2 col-form-label text-center">Главная картинка</label>
+            <div class="custom-fileInput">
+                 {{ form.main_image }}
+                <img class="custom-fileInput-image" src="{% static 'img/nophoto.png' %}" alt="AddImage Logo">
+                <img class="image-preview" src="" alt="" id="image-preview">
+            </div>
+        <label class="button-upload" for="id_main_image">Загрузить</label>
+        <button type="button" class="button-delete" id="buttonDel">Удалить</button>
         </div>
         <div class="form-group row">
-            <label for="textInput" class="col-sm-2 col-form-label text-center d-flex align-items-center justify-content-center">Главная картинка</label>
-                <div class="col-sm-1 d-flex align-items-center">
-                    <img src="/static/img/nophoto.png" alt="default" style="width: 100px; height: auto;">
-                </div>
-                <div class="col-sm-1 d-flex align-items-center justify-content-center">
-                    <button type="button" class="btn btn-success">Загрузить</button>
-                </div>
-                <div class="col-sm-1 d-flex align-items-center justify-content-center">
-                    <button type="button" class="btn btn-danger">Удалить</button>
+              <label for="URLInput" class="col-sm-2 col-form-label text-center">Ссылка на трейлер</label>
+                <div class="col-sm-6">
+                   {{ form.trailer_url }}
                 </div>
         </div>
-        <div class="form-group row">
-              <label for="urlInput" class="col-sm-2 col-form-label text-center">Ссылка на трейлер</label>
-                <div class="col-sm-3">
-                    <input type="url" class="form-control" id="urlInput" placeholder="URL">
-                </div>
-        </div>
+        <div class="container" style="margin-left: 450px">
+                <button type="submit" class="btn btn-secondary">Сохранить</button>
+                <button type="button" class="btn btn-secondary" id="clear-form-button">Вернуть базовую версию</button>
+            </div>
+    </form>
+        <script src="{% static 'js/upload.js' %}"></script>
 {% endblock %}

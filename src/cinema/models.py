@@ -6,8 +6,8 @@ class Cinema(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
     conditions = models.TextField()
-    logo = models.ImageField
-    banner_image = models.ImageField
+    logo = models.ImageField()
+    banner_image = models.ImageField()
     # TODO: upload_to, MEDIA_ROOT для ImageField
     gallery = models.OneToOneField(ImageGallery, on_delete=models.PROTECT)
     seo = models.OneToOneField(SEO, on_delete=models.PROTECT)
@@ -16,15 +16,15 @@ class Cinema(models.Model):
 class Film(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(blank=True)
-    release = models.DateField(null=False)
-    main_image = models.ImageField
+    # release = models.DateField(null=False)
+    main_image = models.ImageField(upload_to='media/img/%Y/%m/%d/')
     # TODO: upload_to, MEDIA_ROOT для ImageField
-    gallery = models.OneToOneField(ImageGallery, on_delete=models.PROTECT)
+    # gallery = models.OneToOneField(ImageGallery, on_delete=models.PROTECT)
     trailer_url = models.URLField(blank=True)
-    type_2D = models.BooleanField()
-    type_3D = models.BooleanField()
-    type_IMAX = models.BooleanField()
-    seo = models.OneToOneField(SEO, on_delete=models.PROTECT)
+    # type_2D = models.BooleanField()
+    # type_3D = models.BooleanField()
+    # type_IMAX = models.BooleanField()
+    # seo = models.OneToOneField(SEO, on_delete=models.PROTECT)
 
 
 class Hall(models.Model):
