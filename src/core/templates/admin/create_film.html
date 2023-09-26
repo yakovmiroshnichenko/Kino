@@ -27,6 +27,22 @@
         <label class="button-upload" for="id_main_image">Загрузить</label>
         <button type="button" class="button-delete" id="buttonDel">Удалить</button>
         </div>
+        <label class="col-sm-2 col-form-label text-center gallery_size">Галерея картинок</label>
+        <div class="form-group fileGallery-box">
+        <label for="textInput" class="col-sm-2 col-form-label text-center">Размер 1000x190</label>
+            <div class="galleryItemWrapper">
+                <div class="custom-fileInput">
+                 {% with formset.empty_form as formset %}
+                     {{ formset.image }}
+                    {% endwith %}
+            </div>
+        <label class="button-upload-gallery" for="id_main_image">Добавить</label>
+        <button type="button" class="button-delete-gallery" id="buttonDel"><i class="fa-regular fa-circle-xmark fa-xl"></i></button>
+            </div>
+
+
+        </div>
+
         <div class="form-group row">
               <label for="URLInput" class="col-sm-2 col-form-label text-center">Ссылка на трейлер</label>
                 <div class="col-sm-6">

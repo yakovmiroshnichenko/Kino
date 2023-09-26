@@ -7,8 +7,8 @@ class ImageGallery(models.Model):
 
 
 class Image(models.Model):
-    image = models.ImageField
-    gallery = models.ForeignKey(ImageGallery, on_delete=models.PROTECT, blank=True)
+    image = models.ImageField(upload_to='media/img/%Y/%m/%d/')
+    gallery = models.ForeignKey(ImageGallery, on_delete=models.CASCADE, blank=True)
 
 
 class SEO(models.Model):

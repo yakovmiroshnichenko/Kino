@@ -19,7 +19,7 @@ class Film(models.Model):
     # release = models.DateField(null=False)
     main_image = models.ImageField(upload_to='media/img/%Y/%m/%d/')
     # TODO: upload_to, MEDIA_ROOT для ImageField
-    # gallery = models.OneToOneField(ImageGallery, on_delete=models.PROTECT)
+    gallery = models.OneToOneField(ImageGallery, on_delete=models.PROTECT)
     trailer_url = models.URLField(blank=True)
     # type_2D = models.BooleanField()
     # type_3D = models.BooleanField()
