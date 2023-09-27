@@ -1,7 +1,4 @@
-.gallery_title{
-    margin: 40px 0 20px 0;
-    padding-left: 60px;
-}
+
 .fileGallery-box{
     display: flex;
     justify-content: flex-start;
@@ -37,4 +34,12 @@
     flex-direction: column;
     gap: 15px;
     margin-right: 15px;
+}
+.gallery-size{
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+.hidden{
+    display: none;
 }

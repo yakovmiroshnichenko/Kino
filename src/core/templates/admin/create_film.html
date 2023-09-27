@@ -27,32 +27,48 @@
         <label class="button-upload" for="id_main_image">Загрузить</label>
         <button type="button" class="button-delete" id="buttonDel">Удалить</button>
         </div>
-        <label class="col-sm-2 col-form-label text-center gallery_size">Галерея картинок</label>
-        <div class="form-group fileGallery-box">
-        <label for="textInput" class="col-sm-2 col-form-label text-center">Размер 1000x190</label>
+        <label class="col-sm-2 col-form-label text-center">Галерея картинок</label>
+        <div id ='image-list' class="form-group fileGallery-box">
+        <label class="col-sm-2 col-form-label text-center gallery-size">Размер 1000x190</label>
             <div class="galleryItemWrapper">
-                <div class="custom-fileInput">
+                <div id='empty-form' class="hidden">
                  {% with formset.empty_form as formset %}
                      {{ formset.image }}
+
                     {% endwith %}
+                <label class="button-upload-gallery" for="id_main_image">Добавить</label>
+                <button type="button" class="button-delete-gallery" id="buttonDel"><i class="fa-regular fa-circle-xmark fa-xl"></i></button>
+                </div>
             </div>
-        <label class="button-upload-gallery" for="id_main_image">Добавить</label>
-        <button type="button" class="button-delete-gallery" id="buttonDel"><i class="fa-regular fa-circle-xmark fa-xl"></i></button>
-            </div>
-
-
+            <button id="add-more" type="button">Add More</button>
         </div>
-
         <div class="form-group row">
               <label for="URLInput" class="col-sm-2 col-form-label text-center">Ссылка на трейлер</label>
                 <div class="col-sm-6">
                    {{ form.trailer_url }}
                 </div>
         </div>
+        <div class="form-group row">
+              <label for="textInput" class="col-sm-2 col-form-label text-center">Тип кино</label>
+                <div class="col-sm-1 col-form-label text-center">
+                   {{ form.type_2D }}
+                   <label for="id_type_2D">2D</label>
+                </div>
+                <div class="col-sm-1 col-form-label text-center">
+                    {{ form.type_3D }}
+                    <label for="id_type_3D">3D</label>
+                </div>
+                <div class="col-sm-1 col-form-label text-center">
+                    {{ form.type_IMAX }}
+                    <label for="id_type_IMAX">IMAX</label>
+            </div>
+        </div>
+
         <div class="container" style="margin-left: 450px">
                 <button type="submit" class="btn btn-secondary">Сохранить</button>
                 <button type="button" class="btn btn-secondary" id="clear-form-button">Вернуть базовую версию</button>
             </div>
     </form>
         <script src="{% static 'js/upload.js' %}"></script>
+        <script src="{% static 'js/gallery.js' %}"></script>
 {% endblock %}
