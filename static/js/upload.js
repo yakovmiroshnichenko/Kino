@@ -1,3 +1,4 @@
+
 // Получить элемент предварительного отображения
 const upload = document.getElementById('image-preview');
 upload.style.display = 'none'; // Скрыть элемент предварительного отображение

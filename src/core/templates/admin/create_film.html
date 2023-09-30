@@ -30,16 +30,13 @@
         <label class="col-sm-2 col-form-label text-center">Галерея картинок</label>
         <div id ='image-list' class="form-group fileGallery-box">
         <label class="col-sm-2 col-form-label text-center gallery-size">Размер 1000x190</label>
-            <div class="galleryItemWrapper">
                 <div id='empty-form' class="hidden">
                  {% with formset.empty_form as formset %}
                      {{ formset.image }}
-
                     {% endwith %}
                 <label class="button-upload-gallery" for="id_main_image">Добавить</label>
                 <button type="button" class="button-delete-gallery" id="buttonDel"><i class="fa-regular fa-circle-xmark fa-xl"></i></button>
                 </div>
-            </div>
             <button id="add-more" type="button">Add More</button>
         </div>
         <div class="form-group row">
